@@ -7,9 +7,8 @@ import {Room, RoomList} from './rooms';
   styleUrls: ['./rooms.component.scss']
 })
 export class RoomsComponent implements OnInit{
-  hotelname = 'Hilton Hotel';
+  hotelname = 'Taj Hotel';
 
-  
   
   cantDestroy = true;
 
