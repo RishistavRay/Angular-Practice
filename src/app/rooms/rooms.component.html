@@ -1,0 +1,36 @@
+<h1>Welcome to {{hotelname}}</h1>
+
+<button (click)="toggle()">My Rooms</button>
+<button (click) = "increase()">Manifest a Room</button>
+<button [hidden] = "cantDestroy" (click) = "decrease()">Destroy a Room</button>
+<div [hidden] = "hideRooms">
+  Number of Rooms:
+  <div class = "numberBox">
+   
+    <div 
+    [ngStyle]="{'color': rooms.availableRooms > 5 ? 'lightgreen': 'red'}"
+    [ngClass]="'black'"
+    [innerText]="numberOfRooms"></div>
+    
+  </div>
+
+  <div *ngIf="selectedRoom">
+    {{selectedRoom | json}}
+  </div>
+
+  <div>
+    <button (click) = "addRoom()">Add Room</button>
+  </div>
+
+  <div *ngIf = "rooms.availableRooms > 0">
+    <hinv-rooms-list [rooms] = "roomsList" [title] = "title"
+    (selectedRoom)="selectRoom($event)"
+    ></hinv-rooms-list> 
+  </div>
+
+</div>
+
+
+
+
+
